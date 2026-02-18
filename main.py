@@ -76,5 +76,9 @@ while True:
    else: 
       distances, predecessors =G.shortest_distances(start)
       break
+for node in G.graph:
+   weg=G.shortest_path(start,node)
+   print(f"{node}: Distanz = {distances[node]:.1f}, Pfad = {' -> '.join(weg)}")
 print("distance:", distances)
 print("node davor:", predecessors)
+   
