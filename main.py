@@ -79,6 +79,6 @@ while True:
 for node in G.graph:
    weg=G.shortest_path(start,node)
    print(f"{node}: Distanz = {distances[node]:.2f}, Pfad = {' -> '.join(weg)}")
-print("distance:", distances)
-print("node davor:", predecessors)
+#print("distance:", distances)
+#print("node davor:", predecessors)
    
