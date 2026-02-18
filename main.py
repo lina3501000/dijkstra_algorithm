@@ -46,7 +46,7 @@ class Graph:
 
         for node, distance in distance.items():
             for neighbor, weight in self.graph[node].items():
-                if distance[neighbor] == distance + weight:
+                if distance[neighbor] == dist + weight:
                     predecessors[neighbor] = node
 
         return distance, predecessors
