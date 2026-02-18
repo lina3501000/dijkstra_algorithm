@@ -69,7 +69,7 @@ class Graph:
         return path
 
 G=Graph(graph)
-start=input("Startknoten:")
+start=input("Startknoten:").upper()
 if start not in G.graph:
    print("fehler, node gibt es nicht")
 else: 
