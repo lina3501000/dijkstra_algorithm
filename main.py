@@ -26,7 +26,6 @@ class Graph:
         distance[source]=0 #entferung zu anfangspunkt wird auf null gesetzt
         #macht priority 
         pq=[(0, source)]
-        heapify(pq)
         #macht set das besuchte knoten speichert
         visited=set()
         while pq: # an wenn priority queue ist nicht alle
@@ -37,7 +36,7 @@ class Graph:
             for neighbor, weight in self.graph[current_node].items():
                 tentative_distance=current_distance+weight #tenterative:erwartbare,vorläufige, macht vorläufige distanz für jeden knoten drum herum
                 if tentative_distance<distance[neighbor]:
-                    distances[neighbor]=tentative_distance
+                    distance[neighbor]=tentative_distance
                     heappush(pq,(tentative_distance, neighbor))
                 """kp, was bei if abgeht: Für jeden Nachbarn berechnen wir die vorläufige Entfernung zum aktuellen Knoten, indem wir den aktuellen Wert des Nachbarn zum Gewicht 
                 der Verbindungskante addieren. Dann prüfen wir, ob der Abstand kleiner ist als der Abstand des Nachbarn in distances. Wenn ja, aktualisieren 
@@ -45,7 +44,7 @@ class Graph:
         predecessors = {node: None for node in self.graph}
 
 
-        for node, distance in distances.items():
+        for node, distance in distance.items():
             for neighbor, weight in self.graph[node].items():
                 if distances[neighbor] == distance + weight:
                     predecessors[neighbor] = node
@@ -68,36 +67,7 @@ class Graph:
 
         return path
 
-
-#manuell hinzufügen
-"""G=Graph()
-G.add_edge("A", "B", 3)
-G.add_edge("A", "C", 3)
-G.add_edge("B", "A", 3)
-G.add_edge("B", "D", 3.5)
-G.add_edge("B", "E", 2.8)"""
-#von dict hizufügen
-#G=Graph(graph=graph)
-#print(G.graph)
-"""distances=G.shortest_distances("B")
-to_F=distances["F"]
-print("kürzeste distanze von b zu f:",to_F)"""
-
-#pq=[(3, "A"), (1, "C"), (7, "D")]
-#heapify(pq) #macht in priorisiert
-#heappop(pq) #gibt höchster wert zurück
-#heappush(pq, (0, "B"))
-#heappop(pq)
-#G = Graph(graph)
-"""
-distances = G.shortest_distances("B")
-print(distances, "\n")
-
-to_F = distances["F"]
-print(f"The shortest distance from B to F is {to_F}")
-"""
-G = Graph(graph)
-
-distances, predecessors = G.shortest_distances("B")
-
-print(predecessors)
+G=Graph(graph)
+distances, predecessors =G.shortest_distances("B")
+print("distance:", distances)
+print("node davor:", predecessors)
