@@ -76,6 +76,13 @@ while True:
    else: 
       distances, predecessors =G.shortest_distances(start)
       break
+#nicht fertig 
+"""willen=input("Willst du endknoten? Y für yes").upper()
+if willen=="Y":
+   ende=input("endknoten:").upper()
+   if ende not in G.graph():
+      print("fehler, arlam, falsch")
+   else distance, predecessor=G.shortest_distances(start,ende)"""
 for node in G.graph:
    weg=G.shortest_path(start,node)
    print(f"{node}: Distanz = {distances[node]:.2f}, Pfad = {' -> '.join(weg)}")
