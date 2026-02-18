@@ -46,10 +46,10 @@ class Graph:
 
         for node, distance in distance.items():
             for neighbor, weight in self.graph[node].items():
-                if distances[neighbor] == distance + weight:
+                if distance[neighbor] == distance + weight:
                     predecessors[neighbor] = node
 
-        return distances, predecessors
+        return distance, predecessors
     def shortest_path(self, source: str, target: str):
         # Generate the predecessors dict
         _, predecessors = self.shortest_distances(source)
