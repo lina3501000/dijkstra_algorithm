@@ -70,7 +70,7 @@ class Graph:
 
 G=Graph(graph)
 start=input("Startknoten:")
-if start not in G.graph():
+if start not in G.graph:
    print("fehler, node gibt es nicht")
 else: 
    distances, predecessors =G.shortest_distances(start)
