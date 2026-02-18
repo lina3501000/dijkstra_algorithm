@@ -26,6 +26,7 @@ class Graph:
         distance[source]=0 #entferung zu anfangspunkt wird auf null gesetzt
         #macht priority 
         pq=[(0, source)]
+        heapify(pq)
         #macht set das besuchte knoten speichert
         visited=set()
         while pq: # an wenn priority queue ist nicht alle
