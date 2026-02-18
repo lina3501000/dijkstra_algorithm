@@ -69,6 +69,10 @@ class Graph:
         return path
 
 G=Graph(graph)
-distances, predecessors =G.shortest_distances("B")
+start=input("Startknoten:")
+if start not in G.graph():
+   print("fehler, node gibt es nicht")
+else: 
+   distances, predecessors =G.shortest_distances(start)
 print("distance:", distances)
 print("node davor:", predecessors)
