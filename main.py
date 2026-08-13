@@ -1,5 +1,4 @@
 from heapq import heapify, heappop, heappush 
-#https://www.datacamp.com/de/tutorial/dijkstra-algorithm-in-python?dc_referrer=https%3A%2F%2Fwww.google.com%2F$0
 """
 heapify: Verwandelt eine Liste von Tupeln mit Priorität-Wert-Paaren in eine Prioritätswarteschlange.
 heappush: Fügt der Warteschlange ein Element mit der entsprechenden Priorität hinzu.
